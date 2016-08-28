@@ -10,7 +10,7 @@ module.exports=function(req,res,next){
         try{
         
             let title=myObject.items[0].volumeInfo.title;
-            let image=myObject.items[0].volumeInfo.imageLinks.smallThumbnail;
+            let image=myObject.items[0].volumeInfo.imageLinks.thumbnail;
             
             User.findOne({'user.username':req.user.user.username},
             function(err,user){
