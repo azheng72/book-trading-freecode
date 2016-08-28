@@ -1,0 +1,29 @@
+<div class="panel panel-default ">
+  <div class="panel-body">
+   
+    <button class="btn btn-primary"  type="button" ng-click='$ctrl.myRequestShow=!$ctrl.myRequestShow;$ctrl.othersRequestShow=false' ng-init='$ctrl.myRequestShow=false'>
+      Your Trade Requests <span class="badge">{{$ctrl.tradeInfo.myRequest.length}}</span>
+    </button>
+    
+    <button class="btn btn-primary" type="button" ng-click='$ctrl.othersRequestShow=!$ctrl.othersRequestShow;$ctrl.myRequestShow=false' ng-init='$ctrl.othersRequestShow=false'>
+      Trade Requests For You <span class="badge">{{$ctrl.tradeInfo.othersRequest.length}}</span>
+    </button>
+    
+    <div  style='margin-top:20px' ng-show='$ctrl.myRequestShow'>
+      <div class="list-group" ng-repeat='myRequest in $ctrl.tradeInfo.myRequest'>
+        <a type="button" class="list-group-item" >{{myRequest.title}}
+          <button class='btn btn-danger btn-xs pull-right' ng-click='$ctrl.deleteTrade(myRequest,$index)'>Delete</button>
+        </a>
+      </div>
+    </div>
+    
+    <div  style='margin-top:20px' ng-show='$ctrl.othersRequestShow'>
+      <div class="list-group"  ng-repeat='othersRequest in $ctrl.tradeInfo.othersRequest'>
+        <a type="button" class="list-group-item" >{{othersRequest.title}}
+          <button class='btn btn-success btn-xs pull-right' ng-click='$ctrl.confirmTrade(othersRequest,$index)' ng-show="$ctrl.showConfirmBtn">Confirm</button>
+        </a>
+      </div>
+    </div>
+
+</div>
+</div>

@@ -1,0 +1,28 @@
+
+<trade mybooks='$ctrl.mybooks'></trade>
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+      <form class="form-inline">
+        <span><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Add Books:    </span>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search" ng-model='$ctrl.addbook.search'>
+          </div>
+        </div>
+        <button  class="btn btn-primary" ng-click='$ctrl.addBook($ctrl.addbook.search)'>Add</button>
+      </form>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-xs-4 col-md-2" style='height:250px' ng-repeat='image in $ctrl.mybooks.image track by $index'>
+    <a href="#" class="thumbnail">
+      <img ng-src={{image}} alt="...">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click='$ctrl.deleteBook($index)'></span>
+    </a>
+  </div>
+</div>

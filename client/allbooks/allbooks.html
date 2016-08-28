@@ -1,0 +1,13 @@
+
+<trade></trade>
+
+<div class="well">To make a trade request, click  <span aria-hidden="true" class="glyphicon glyphicon-refresh"></span></div>
+
+<div class="row">
+  <div class="col-xs-4 col-md-2 " style='height:250px' ng-repeat='book in $ctrl.allbooks track by $index'>
+    <a href="#" class="thumbnail ">
+      <span class="glyphicon" ng-class='$ctrl.icon[$index]' aria-hidden="true" ng-click='$ctrl.trade(book,$index)' ng-show=!{{book.traded}}></span>
+      <img   ng-src={{book.image}} alt="...">
+    </a>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "name": "book-trade",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "author": "azheng72",
+  "dependencies": {
+    "@angular/router": "^0.2.0",
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "async": "~0.2.8",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "jquery": "^3.1.0",
+    "mongoose": "^4.1.12",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "request": "^2.74.0",
+    "socket.io": "~0.9.14"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}
