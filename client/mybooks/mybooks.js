@@ -7,12 +7,12 @@ app.component('mybooks',{
 });
 
 function MybooksController(myAjax){
-    let ctrl=this;
+    var ctrl=this;
     ctrl.addBook=function(search){
         myAjax.addbook({search:search})
         .$promise.then(function(response){
             console.log(response.books);
-            ctrl.mybooks.image=response.books.map((val)=>val.image);
+            ctrl.mybooks.image=response.books.map(function(val) {return val.image});
         },function(error){
             //ctrl.login.status=error.status;
         });
@@ -31,7 +31,7 @@ function MybooksController(myAjax){
     myAjax.mybooks({})  //load all my books
     .$promise.then(function(response){
         console.log(response.books);
-        ctrl.mybooks.image=response.books.map((val)=>val.image);
+        ctrl.mybooks.image=response.books.map(function(val) {return val.image});
     },function(error){
         ctrl.mybooks.status=error.status;
     });

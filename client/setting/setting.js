@@ -7,7 +7,7 @@ app.component('setting',{
 });
 
 function SettingController(myAjax){
-    let ctrl=this;
+    var ctrl=this;
     ctrl.userInfo={};
     
     myAjax.personalinfo()

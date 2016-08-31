@@ -8,7 +8,7 @@ app.component('allbooks',{
 });
 
 function AllbooksController(myAjax,$compile){
-    let ctrl=this;
+    var ctrl=this;
     ctrl.allbooks=[];
     ctrl.icon=[]; 
     ctrl.newTrade=[];
@@ -16,7 +16,7 @@ function AllbooksController(myAjax,$compile){
     myAjax.allbooks({})
     .$promise.then(function(response){
             ctrl.allbooks=response.books;//.map((val)=>{val.forceChange='no';return val});
-            for(let i=0;i<ctrl.allbooks.length;i++)
+            for(var i=0;i<ctrl.allbooks.length;i++)
                 ctrl.icon.push('glyphicon-refresh');
         },function(error){
             console.log(error.status);
@@ -33,5 +33,5 @@ function AllbooksController(myAjax,$compile){
         },function(error){
             //ctrl.login.status=error.status;
         });
-    }
+    };
 }
